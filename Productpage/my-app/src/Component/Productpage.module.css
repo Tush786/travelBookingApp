@@ -1,0 +1,32 @@
+.Container{
+    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 90%;
+    gap: 25px;
+    margin: auto;
+}
+
+.filterbtn{
+    display: flex;
+   
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    /* border: 1px solid red; */
+    margin-bottom: 50px;
+}
+
+.filterbtn button{
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.filterbtn button:hover{
+    
+    background: rgb(216, 214, 214);
+}

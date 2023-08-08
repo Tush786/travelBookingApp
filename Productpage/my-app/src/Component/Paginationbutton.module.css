@@ -1,0 +1,15 @@
+.btn{
+  padding:20px 42%;
+  display: flex;
+  /* justify-content: space-evenly; */
+  /* border: 2px solid black; */
+  width: 80%;
+  /* margin: auto;
+   */
+}
+
+.btn button{
+    padding: 0px 20px;
+    border-radius: 15px;
+
+}
