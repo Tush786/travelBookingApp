@@ -33,13 +33,11 @@ const DesktopNav = () => {
     {path:'/discover',title:"Discover"},
     {path:'/Services',title:"Services"},
     {path:'/community',title:"Community"},
-    {path:'/aboutus',title:"AboutUs"},
-//     {path:'/login',title:"Login"},
-//     {path:'/register',title:"Register"},
+    {path:'/aboutus',title:"AboutUs"}
 ]
 
   return (
-    <Stack direction={'row'} spacing={40} height={70}  display="flex" 
+    <Stack direction={'row'} ml={150} spacing={10} height={70}  display="flex" 
     alignItems="center">
       {links.map((elem,i) => (
         <Box key={elem.path}>
@@ -50,25 +48,10 @@ const DesktopNav = () => {
                 p={2}
                 fontSize={'sm'}
                 fontWeight={500}
-                color={linkColor}
-                m={'auto'} justifyContent={'center'}
-                _hover={{
-                  textDecoration: 'none',
-                  color: 'grey',
-                }}>
-                  {/* <Link 
-                p={2}
-                href={elem.path}
-                fontSize={15}
-                fontWeight={600}
-                color={'grey'}
-                _hover={{
-                  textDecoration: 'none',
-                  color: "black",
-                }}>
-                {elem.title}
-              </Link> */}
-              <Link key={elem.path} to={elem.path} style={{textDecoration:'none'}} >{elem.title}</Link>
+                color={'white'}
+                 justifyContent={'center'}
+               >
+              <Link key={elem.path} to={elem.path} style={{textDecoration:'none' ,color:'grey' ,fontSize:'15px'}} >{elem.title}</Link>
               </Box>
             </PopoverTrigger>
           </Popover>
@@ -79,3 +62,4 @@ const DesktopNav = () => {
 }
 
 export default DesktopNav
+
