@@ -1,9 +1,17 @@
+#CardMain{
+    
+}
+
+
+
 .Card{
     /* background: red; */
     /* width: 500px; */
     /* border: 1px solid yellow; */
     cursor: pointer;
+    text-align: left;
 }
+
 
 .Card img{
     width: 100%;

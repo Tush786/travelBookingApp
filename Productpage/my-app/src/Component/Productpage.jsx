@@ -9,6 +9,7 @@ function Productpage() {
     const [page, setPage] = useState(1);
     const [totalPage, setTotalPage] = useState([])
     const [sortby, setSortby] = useState('')
+    const[all,setAll]=useState("")
     let limit = 9;
     let Length = totalPage.length;
     console.log(Length)
@@ -17,10 +18,9 @@ function Productpage() {
         if (sortby) {
             return `${url}&_sort=cost&_order=${sortby}`
         }
-        else{
+        else if(all==""){
             return url
         }
-       
     }
 
     async function TotalPage() {
@@ -33,13 +33,11 @@ function Productpage() {
         }
     }
 
-
     const FetchData = async () => {
         let Apiurl = getUrl(
             `http://localhost:8080/Product?_page=${page}&_limit=${limit}`,
             sortby
         );
-
         try {
             let Resp = await axios.get(Apiurl);
             console.log(Resp.data)
@@ -58,7 +56,7 @@ function Productpage() {
     return (
         <div>
             <div className={style.filterbtn}>
-                <button>All</button>
+                <button onClick={()=>setAll("")}>All</button>
                 <button>Trending</button>
                 <button>Popular</button>
                 <button onClick={() => setSortby('asc')}>Price Low To High</button>
@@ -71,12 +69,9 @@ function Productpage() {
                         return <ProductCard key={i} {...el} />
                     })
                 }
-
             </div>
             <ButtonPagination setPage={setPage} page={page} Length={Length} />
         </div>
-
-
 
     )
 }
