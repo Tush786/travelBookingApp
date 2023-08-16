@@ -13,6 +13,7 @@ import {
   } from '@chakra-ui/react'
   import Service from "../Image/Service.PNG"
   import ServiceBG from "../Image/ServiceBG.PNG"
+  import Chain from "../Image/Chain.PNG"
   
   export default function Services() {
     return (

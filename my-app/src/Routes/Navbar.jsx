@@ -298,12 +298,14 @@ import Logo from "../Image/LOGO.PNG"
 import Discover from "../Image/NavBG1.PNG"
 import DesktopNav from './NavbarLink'
 import MobileNav from '../Files/MobileNav'
-import { Link } from 'react-router-dom'
 import Nav from "../Image/NavBG12.PNG"
+import { Link } from 'react-router-dom'
+import Homepage from '../Component/Homepage'
+import {Routes,Route} from "react-router-dom"
 
 const Navbar=()=>{
   const { isOpen, onToggle } = useDisclosure()
-
+  
   return (
     <Box>
       <Flex
@@ -313,9 +315,6 @@ const Navbar=()=>{
         minH={'60px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        // borderBottom={1}
-        // borderStyle={'solid'}
-        // borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}>
         <Flex
           flex={{ base: 1, md: 'auto' }}
@@ -329,7 +328,7 @@ const Navbar=()=>{
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-        <Image src={Logo} w={150} h={45} mt={3} ml={[0,0,20]}/>
+    <Link to='/'>  <Image src={Logo} cursor={'pointer'} w={150} h={45} mt={3} ml={[0,0,20]}/> </Link>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -340,7 +339,7 @@ const Navbar=()=>{
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-            <Button 
+            <Button
              as={'a'}
              href='/login'
              textDecoration='none' 
@@ -350,7 +349,7 @@ const Navbar=()=>{
               bgImg:{Discover},
             }}
             >
-              Login
+            Login
           </Button>
           <Button
             as={'a'}

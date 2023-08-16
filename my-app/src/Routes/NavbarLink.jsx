@@ -21,19 +21,20 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { Link } from 'react-scroll'
+import { useState } from 'react'
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200')
   const linkHoverColor = useColorModeValue('gray.800', 'white')
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
-  
+  const[toggle,setToggle]=useState(true)
   const links = [
-    {path:'/',title:"Home"},
-    {path:'/discover',title:"Discover"},
-    {path:'/Services',title:"Services"},
-    {path:'/community',title:"Community"},
-    {path:'/aboutus',title:"AboutUs"}
+    {path:'discover',title:"Discover"},
+    {path:'service',title:"Services"},
+    {path:'community',title:"Community"},
+    {path:'aboutus',title:"AboutUs"}
 ]
 
   return (
@@ -51,7 +52,7 @@ const DesktopNav = () => {
                 color={'white'}
                  justifyContent={'center'}
                >
-              <Link key={elem.path} to={elem.path} style={{textDecoration:'none' ,color:'grey' ,fontSize:'15px'}} >{elem.title}</Link>
+              <Link key={elem.path} activeClass="active" smooth spy to={elem.path}  style={{textDecoration:'none' ,color:'grey' ,fontSize:'15px',cursor:'pointer'}} >{elem.title}</Link>
               </Box>
             </PopoverTrigger>
           </Popover>

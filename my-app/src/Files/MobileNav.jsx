@@ -2,11 +2,10 @@ import { Stack } from "@chakra-ui/react"
 import MobileNavItem from "./MobileNavItem"
 
 const links = [
-    {path:'/',title:"Home"},
-    {path:'/discover',title:"Discover"},
-    {path:'/Services',title:"Services"},
-    {path:'/community',title:"Community"},
-    {path:'/aboutus',title:"AboutUs"}
+    {path:'discover',title:"Discover"},
+    {path:'service',title:"Services"},
+    {path:'community',title:"Community"},
+    {path:'aboutus',title:"AboutUs"}
 ]
 
 
